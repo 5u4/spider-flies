@@ -1,8 +1,11 @@
 {
   "name": "spider-flies",
   "version": "0.0.1",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "serve": "node server.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "peer": "^0.6.1"

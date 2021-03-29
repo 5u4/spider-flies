@@ -265,6 +265,29 @@
         {
           "type": {
             "inverted": false,
+            "value": "TextObject::WrappingWidth"
+          },
+          "parameters": [
+            "Error",
+            "=",
+            "ScreenWidth()-32"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "TextObject::SetWrapping"
+          },
+          "parameters": [
+            "Error",
+            "yes"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
             "value": "Cache"
           },
           "parameters": [
