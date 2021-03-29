@@ -1,0 +1,39 @@
+{
+  "associatedLayout": "Battle",
+  "lastChangeTimeStamp": 0,
+  "name": "GameOver",
+  "events": [
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "IsSpider",
+            "=",
+            "1-GlobalVariable(IsSpider)"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "PushScene"
+          },
+          "parameters": [
+            "",
+            "\"Battle\""
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    }
+  ]
+}

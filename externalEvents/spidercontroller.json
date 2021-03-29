@@ -4,63 +4,543 @@
   "name": "SpiderController",
   "events": [
     {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
       "disabled": false,
       "folded": false,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "VarGlobal"
-          },
-          "parameters": [
-            "IsSpider",
-            "=",
-            "1"
-          ],
-          "subInstructions": []
-        }
-      ],
-      "actions": [],
+      "name": "Player",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
           "disabled": false,
           "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "IsSpider",
+                "=",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Vector2.X",
+                    "=",
+                    "MouseX()"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Vector2.Y",
+                    "=",
+                    "MouseY()"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "P2P::SendToAllVariable"
+                  },
+                  "parameters": [
+                    "\"Spider\"",
+                    "Vector2"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "AnimationName"
+                  },
+                  "parameters": [
+                    "Spider",
+                    "\"Idle\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Egal"
+                      },
+                      "parameters": [
+                        "DistanceBetweenPositions(Spider.PointX(\"Center\"),Spider.PointY(\"Center\"),Variable(Vector2.X),Variable(Vector2.Y))",
+                        ">",
+                        "10"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "AddForceVersPos"
+                      },
+                      "parameters": [
+                        "Spider",
+                        "MouseX()",
+                        "MouseY()",
+                        "Spider.Variable(Speed)",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "RotateTowardPosition"
+                      },
+                      "parameters": [
+                        "Spider",
+                        "MouseX()",
+                        "MouseY()",
+                        "800",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "AnimationName"
+                  },
+                  "parameters": [
+                    "Spider",
+                    "\"Idle\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": [],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetAnimationName"
+                  },
+                  "parameters": [
+                    "Spider",
+                    "\"Attack\""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Vector2WithAngle.X",
+                    "=",
+                    "Spider.PointX(\"Center\")"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Vector2WithAngle.Y",
+                    "=",
+                    "Spider.PointY(\"Center\")"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Vector2WithAngle.Angle",
+                    "=",
+                    "Spider.Angle()"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "P2P::SendToAllVariable"
+                  },
+                  "parameters": [
+                    "\"Spit\"",
+                    "Vector2WithAngle"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "CollisionNP"
+                  },
+                  "parameters": [
+                    "Spider",
+                    "Fly",
+                    "",
+                    "",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "P2P::SendToAll"
+                  },
+                  "parameters": [
+                    "\"GameOver\"",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Link",
+                  "include": {
+                    "includeConfig": 0
+                  },
+                  "target": "GameOver"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "disabled": false,
+      "folded": false,
+      "name": "Opponent",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarGlobal"
+              },
+              "parameters": [
+                "IsSpider",
+                "=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "P2P::OnEvent"
+                  },
+                  "parameters": [
+                    "\"Spider\"",
+                    "yes"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "P2P::GetEventVariable"
+                  },
+                  "parameters": [
+                    "\"Spider\"",
+                    "Vector2"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "AnimationName"
+                      },
+                      "parameters": [
+                        "Spider",
+                        "\"Idle\""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "disabled": false,
+                      "folded": false,
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Egal"
+                          },
+                          "parameters": [
+                            "DistanceBetweenPositions(Spider.PointX(\"Center\"),Spider.PointY(\"Center\"),Variable(Vector2.X),Variable(Vector2.Y))",
+                            ">",
+                            "10"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "AddForceVersPos"
+                          },
+                          "parameters": [
+                            "Spider",
+                            "Variable(Vector2.X)",
+                            "Variable(Vector2.Y)",
+                            "Spider.Variable(Speed)",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "RotateTowardPosition"
+                          },
+                          "parameters": [
+                            "Spider",
+                            "Variable(Vector2.X)",
+                            "Variable(Vector2.Y)",
+                            "800",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "P2P::OnEvent"
+                  },
+                  "parameters": [
+                    "\"GameOver\"",
+                    "no"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Link",
+                  "include": {
+                    "includeConfig": 0
+                  },
+                  "target": "GameOver"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "disabled": false,
+      "folded": false,
+      "name": "Shared",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "P2P::OnEvent"
+              },
+              "parameters": [
+                "\"Spit\"",
+                "no"
+              ],
+              "subInstructions": []
+            }
+          ],
           "actions": [
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "P2P::GetEventVariable"
               },
               "parameters": [
-                "Vector2.X",
-                "=",
-                "MouseX()"
+                "\"Spit\"",
+                "Vector2WithAngle"
               ],
               "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarScene"
+                "value": "MettreXY"
               },
               "parameters": [
-                "Vector2.Y",
+                "Spider",
                 "=",
-                "MouseY()"
+                "Variable(Vector2WithAngle.X)",
+                "=",
+                "Variable(Vector2WithAngle.Y)"
               ],
               "subInstructions": []
             },
             {
               "type": {
                 "inverted": false,
-                "value": "P2P::SendToAllVariable"
+                "value": "SetAngle"
               },
               "parameters": [
-                "\"Spider\"",
-                "Vector2"
+                "Spider",
+                "=",
+                "Variable(Vector2WithAngle.Angle)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetAnimationName"
+              },
+              "parameters": [
+                "Spider",
+                "\"Attack\""
               ],
               "subInstructions": []
             }
@@ -79,247 +559,8 @@
               },
               "parameters": [
                 "Spider",
-                "\"Idle\""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "MouseButtonPressed"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": [],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SetAnimationName"
-              },
-              "parameters": [
-                "Spider",
                 "\"Attack\""
               ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        }
-      ]
-    },
-    {
-      "disabled": false,
-      "folded": false,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "VarGlobal"
-          },
-          "parameters": [
-            "IsSpider",
-            "=",
-            "0"
-          ],
-          "subInstructions": []
-        }
-      ],
-      "actions": [],
-      "events": [
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "Vector2.X",
-                "=",
-                "Spider.PointX(\"Center\")"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "Vector2.Y",
-                "=",
-                "Spider.PointY(\"Center\")"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "P2P::OnEvent"
-              },
-              "parameters": [
-                "\"Spider\"",
-                "yes"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "P2P::GetEventVariable"
-              },
-              "parameters": [
-                "\"Spider\"",
-                "Vector2"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        }
-      ]
-    },
-    {
-      "disabled": false,
-      "folded": false,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "AnimationName"
-          },
-          "parameters": [
-            "Spider",
-            "\"Idle\""
-          ],
-          "subInstructions": []
-        }
-      ],
-      "actions": [],
-      "events": [
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Egal"
-              },
-              "parameters": [
-                "DistanceBetweenPositions(Spider.PointX(\"Center\"),Spider.PointY(\"Center\"),Variable(Vector2.X),Variable(Vector2.Y))",
-                ">",
-                "10"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "AddForceVersPos"
-              },
-              "parameters": [
-                "Spider",
-                "Variable(Vector2.X)",
-                "Variable(Vector2.Y)",
-                "Spider.Variable(Speed)",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "RotateTowardPosition"
-              },
-              "parameters": [
-                "Spider",
-                "Variable(Vector2.X)",
-                "Variable(Vector2.Y)",
-                "800",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        }
-      ]
-    },
-    {
-      "disabled": false,
-      "folded": false,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "AnimationName"
-          },
-          "parameters": [
-            "Spider",
-            "\"Attack\""
-          ],
-          "subInstructions": []
-        }
-      ],
-      "actions": [],
-      "events": [
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Sprite"
-              },
-              "parameters": [
-                "Spider",
-                "=",
-                "1"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "BuiltinCommonInstructions::Once"
-              },
-              "parameters": [],
               "subInstructions": []
             }
           ],
@@ -328,46 +569,77 @@
             {
               "disabled": false,
               "folded": false,
-              "type": "BuiltinCommonInstructions::Link",
-              "include": {
-                "includeConfig": 0
-              },
-              "target": "CreateWeb"
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Sprite"
+                  },
+                  "parameters": [
+                    "Spider",
+                    "=",
+                    "1"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "BuiltinCommonInstructions::Once"
+                  },
+                  "parameters": [],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Link",
+                  "include": {
+                    "includeConfig": 0
+                  },
+                  "target": "CreateWeb"
+                }
+              ]
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "AnimationEnded"
+                  },
+                  "parameters": [
+                    "Spider"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetAnimationName"
+                  },
+                  "parameters": [
+                    "Spider",
+                    "\"Idle\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
             }
           ]
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "AnimationEnded"
-              },
-              "parameters": [
-                "Spider"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SetAnimationName"
-              },
-              "parameters": [
-                "Spider",
-                "\"Idle\""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
         }
-      ]
+      ],
+      "parameters": []
     }
   ]
 }

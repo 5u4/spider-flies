@@ -4,124 +4,16 @@
   "name": "FlyController",
   "events": [
     {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
       "disabled": false,
       "folded": false,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "VarGlobal"
-          },
-          "parameters": [
-            "IsSpider",
-            "=",
-            "0"
-          ],
-          "subInstructions": []
-        }
-      ],
-      "actions": [],
+      "name": "Player",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
       "events": [
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "Vector2.X",
-                "=",
-                "MouseX()"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "Vector2.Y",
-                "=",
-                "MouseY()"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "P2P::SendToAllVariable"
-              },
-              "parameters": [
-                "\"Fly\"",
-                "Vector2"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        }
-      ]
-    },
-    {
-      "disabled": false,
-      "folded": false,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "VarGlobal"
-          },
-          "parameters": [
-            "IsSpider",
-            "=",
-            "1"
-          ],
-          "subInstructions": []
-        }
-      ],
-      "actions": [],
-      "events": [
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "Vector2.X",
-                "=",
-                "Fly.PointX(\"Center\")"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ModVarScene"
-              },
-              "parameters": [
-                "Vector2.Y",
-                "=",
-                "Fly.PointY(\"Center\")"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
         {
           "disabled": false,
           "folded": false,
@@ -130,81 +22,248 @@
             {
               "type": {
                 "inverted": false,
-                "value": "P2P::OnEvent"
+                "value": "VarGlobal"
               },
               "parameters": [
-                "\"Fly\"",
-                "yes"
+                "IsSpider",
+                "=",
+                "0"
               ],
               "subInstructions": []
             }
           ],
-          "actions": [
+          "actions": [],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Egal"
+                  },
+                  "parameters": [
+                    "DistanceBetweenPositions(Fly.PointX(\"Center\"),Fly.PointY(\"Center\"),Variable(Vector2.X),Variable(Vector2.Y))",
+                    ">",
+                    "10"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "AddForceVersPos"
+                  },
+                  "parameters": [
+                    "Fly",
+                    "MouseX()",
+                    "MouseY()",
+                    "clamp(Fly.Variable(Speed)-Fly.Variable(Slow),0,Fly.Variable(Speed))",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "RotateTowardPosition"
+                  },
+                  "parameters": [
+                    "Fly",
+                    "MouseX()",
+                    "MouseY()",
+                    "800",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Vector2.X",
+                    "=",
+                    "Fly.PointX(\"Center\")"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Vector2.Y",
+                    "=",
+                    "Fly.PointY(\"Center\")"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "P2P::SendToAllVariable"
+                  },
+                  "parameters": [
+                    "\"Fly\"",
+                    "Vector2"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarObjet"
+                  },
+                  "parameters": [
+                    "Fly",
+                    "Slow",
+                    "=",
+                    "max(0,Fly.Variable(Slow)-2)"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        }
+      ],
+      "parameters": []
+    },
+    {
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "disabled": false,
+      "folded": false,
+      "name": "Opponent",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
             {
               "type": {
                 "inverted": false,
-                "value": "P2P::GetEventVariable"
+                "value": "VarGlobal"
               },
               "parameters": [
-                "\"Fly\"",
-                "Vector2"
+                "IsSpider",
+                "=",
+                "1"
               ],
               "subInstructions": []
             }
           ],
-          "events": []
-        }
-      ]
-    },
-    {
-      "disabled": false,
-      "folded": false,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "Egal"
-          },
-          "parameters": [
-            "DistanceBetweenPositions(Fly.PointX(\"Center\"),Fly.PointY(\"Center\"),Variable(Vector2.X),Variable(Vector2.Y))",
-            ">",
-            "10"
-          ],
-          "subInstructions": []
+          "actions": [],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "P2P::OnEvent"
+                  },
+                  "parameters": [
+                    "\"Fly\"",
+                    "yes"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "P2P::GetEventVariable"
+                  },
+                  "parameters": [
+                    "\"Fly\"",
+                    "Vector2"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": [
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "Egal"
+                      },
+                      "parameters": [
+                        "DistanceBetweenPositions(Fly.PointX(\"Center\"),Fly.PointY(\"Center\"),Variable(Vector2.X),Variable(Vector2.Y))",
+                        ">",
+                        "10"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "AddForceVersPos"
+                      },
+                      "parameters": [
+                        "Fly",
+                        "Variable(Vector2.X)",
+                        "Variable(Vector2.Y)",
+                        "Fly.Variable(Speed)",
+                        ""
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "RotateTowardPosition"
+                      },
+                      "parameters": [
+                        "Fly",
+                        "Variable(Vector2.X)",
+                        "Variable(Vector2.Y)",
+                        "800",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                }
+              ]
+            }
+          ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "AddForceVersPos"
-          },
-          "parameters": [
-            "Fly",
-            "Variable(Vector2.X)",
-            "Variable(Vector2.Y)",
-            "Fly.Variable(Speed)",
-            ""
-          ],
-          "subInstructions": []
-        },
-        {
-          "type": {
-            "inverted": false,
-            "value": "RotateTowardPosition"
-          },
-          "parameters": [
-            "Fly",
-            "Variable(Vector2.X)",
-            "Variable(Vector2.Y)",
-            "800",
-            ""
-          ],
-          "subInstructions": []
-        }
-      ],
-      "events": []
+      "parameters": []
     }
   ]
 }
