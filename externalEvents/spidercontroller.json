@@ -9,7 +9,7 @@
       "colorR": 74,
       "creationTime": 0,
       "disabled": false,
-      "folded": true,
+      "folded": false,
       "name": "Player",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -205,7 +205,7 @@
                   "parameters": [
                     "Vector2WithAngle.X",
                     "=",
-                    "Spider.PointX(\"Center\")"
+                    "Spider.X()"
                   ],
                   "subInstructions": []
                 },
@@ -217,7 +217,7 @@
                   "parameters": [
                     "Vector2WithAngle.Y",
                     "=",
-                    "Spider.PointY(\"Center\")"
+                    "Spider.Y()"
                   ],
                   "subInstructions": []
                 },
@@ -303,7 +303,7 @@
       "colorR": 74,
       "creationTime": 0,
       "disabled": false,
-      "folded": true,
+      "folded": false,
       "name": "Opponent",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
@@ -569,7 +569,7 @@
         },
         {
           "disabled": false,
-          "folded": true,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {

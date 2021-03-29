@@ -45,7 +45,7 @@
                     "value": "Egal"
                   },
                   "parameters": [
-                    "DistanceBetweenPositions(Fly.PointX(\"Center\"),Fly.PointY(\"Center\"),Variable(Vector2.X),Variable(Vector2.Y))",
+                    "DistanceBetweenPositions(Fly.PointX(\"Center\"),Fly.PointY(\"Center\"),MouseX(),MouseY())",
                     ">",
                     "10"
                   ],
