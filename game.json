@@ -103,6 +103,51 @@
         "metadata": "",
         "name": "assets\\mini-wakuwaku.otf",
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/spider-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\spider-1.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/spider-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\spider-2.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/spider-3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\spider-3.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/spider-4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\spider-4.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/web.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\web.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -130,6 +175,11 @@
       "name": "Number",
       "type": "string",
       "value": ""
+    },
+    {
+      "name": "IsSpider",
+      "type": "string",
+      "value": "1"
     }
   ],
   "layouts": [
@@ -142,7 +192,16 @@
       "referenceTo": "/layouts/battle"
     }
   ],
-  "externalEvents": [],
+  "externalEvents": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/spidercontroller"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/createweb"
+    }
+  ],
   "eventsFunctionsExtensions": [],
   "externalLayouts": [],
   "externalSourceFiles": []

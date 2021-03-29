@@ -1,0 +1,81 @@
+{
+  "associatedLayout": "Battle",
+  "lastChangeTimeStamp": 0,
+  "name": "CreateWeb",
+  "events": [
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "Web",
+            "",
+            "",
+            ""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ChangeScale"
+          },
+          "parameters": [
+            "Web",
+            "=",
+            "0.5"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "MettreXY"
+          },
+          "parameters": [
+            "Web",
+            "=",
+            "Spider.PointX(\"Muzzle\")-Web.Width()/2",
+            "=",
+            "Spider.PointY(\"Muzzle\")-Web.Height()/2"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "SetAngle"
+          },
+          "parameters": [
+            "Web",
+            "=",
+            "Spider.Angle()"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "Web",
+            "Spider.Angle()",
+            "Web.Variable(Speed)",
+            "1"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    }
+  ]
+}
