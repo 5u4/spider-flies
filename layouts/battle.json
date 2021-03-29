@@ -75,8 +75,8 @@
       "name": "Spider",
       "persistentUuid": "4e98f1cf-8095-4e30-a31d-f43a5d8175f6",
       "width": 0,
-      "x": 184,
-      "y": 284,
+      "x": 154,
+      "y": 286,
       "zOrder": 1,
       "numberProperties": [],
       "stringProperties": [],
@@ -100,6 +100,44 @@
           "value": 0
         }
       ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Trail",
+      "persistentUuid": "b292de94-8186-4068-ab58-90a419b23208",
+      "width": 0,
+      "x": 185,
+      "y": 318,
+      "zOrder": -1,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "FollowSpider",
+          "type": "boolean",
+          "value": true
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Trail",
+      "persistentUuid": "ccaa7677-1131-4213-8c25-654e8410677b",
+      "width": 0,
+      "x": 585,
+      "y": 319,
+      "zOrder": -1,
+      "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
     }
@@ -539,6 +577,69 @@
           ]
         }
       ]
+    },
+    {
+      "additive": false,
+      "alphaParam": "Mutable",
+      "angleParam": "Mutable",
+      "blueParam": "Random",
+      "destroyWhenNoParticles": true,
+      "emissionEditionSimpleMode": true,
+      "emitterAngleA": 0,
+      "emitterAngleB": 0,
+      "emitterForceMax": 0,
+      "emitterForceMin": 0,
+      "emitterXDirection": 0,
+      "emitterYDirection": 1,
+      "emitterZDirection": 0,
+      "flow": 2,
+      "friction": 2,
+      "gravityEditionSimpleMode": true,
+      "greenParam": "Random",
+      "maxParticleNb": 300,
+      "name": "Trail",
+      "particleAlpha1": 204,
+      "particleAlpha2": 0,
+      "particleAlphaRandomness1": 0,
+      "particleAlphaRandomness2": 0,
+      "particleAngle1": 0,
+      "particleAngle2": 10,
+      "particleAngleRandomness1": 0,
+      "particleAngleRandomness2": 0,
+      "particleBlue1": 0,
+      "particleBlue2": 0,
+      "particleEditionSimpleMode": true,
+      "particleGravityX": 0,
+      "particleGravityY": 0,
+      "particleGravityZ": 0,
+      "particleGreen1": 0,
+      "particleGreen2": 0,
+      "particleLifeTimeMax": 2.5,
+      "particleLifeTimeMin": 1.5,
+      "particleRed1": 0,
+      "particleRed2": 0,
+      "particleSize1": 80,
+      "particleSize2": 0,
+      "particleSizeRandomness1": 0,
+      "particleSizeRandomness2": 0,
+      "redParam": "Enabled",
+      "rendererParam1": 64,
+      "rendererParam2": 64,
+      "rendererType": "Quad",
+      "sizeParam": "Mutable",
+      "tags": "",
+      "tank": -1,
+      "textureParticleName": "assets\\trail.png",
+      "type": "ParticleSystem::ParticleEmitter",
+      "zoneRadius": 5,
+      "variables": [
+        {
+          "name": "FollowSpider",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "behaviors": []
     }
   ],
   "events": [
@@ -568,6 +669,88 @@
         "includeConfig": 0
       },
       "target": "WebController"
+    },
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "Trail",
+      "conditions": [],
+      "actions": [],
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Trail",
+                "FollowSpider",
+                "True"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "Trail",
+                "=",
+                "Spider.PointX(\"Center\")",
+                "=",
+                "Spider.PointY(\"Center\")"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Trail",
+                "FollowSpider",
+                "False"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "Trail",
+                "=",
+                "Fly.PointX(\"Center\")",
+                "=",
+                "Fly.PointY(\"Center\")"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
     }
   ],
   "layers": [

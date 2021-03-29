@@ -134,7 +134,7 @@
                     "Fly",
                     "Slow",
                     "=",
-                    "max(0,Fly.Variable(Slow)-2)"
+                    "max(0,Fly.Variable(Slow)-0.7)"
                   ],
                   "subInstructions": []
                 }
