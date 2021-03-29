@@ -26,7 +26,24 @@
     "zoomFactor": 1
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "Vector2",
+      "type": "structure",
+      "children": [
+        {
+          "name": "X",
+          "type": "string",
+          "value": ""
+        },
+        {
+          "name": "Y",
+          "type": "string",
+          "value": ""
+        }
+      ]
+    }
+  ],
   "instances": [
     {
       "angle": 0,
@@ -41,6 +58,27 @@
       "y": 284,
       "zOrder": 1,
       "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Fly",
+      "persistentUuid": "9733d26e-a6d4-42a0-b3e4-ffc60ccc1602",
+      "width": 0,
+      "x": 549,
+      "y": 288,
+      "zOrder": 2,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 0
+        }
+      ],
       "stringProperties": [],
       "initialVariables": []
     }
@@ -245,6 +283,68 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Fly",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "Speed",
+          "type": "string",
+          "value": "120"
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Idle",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.11110000312328339,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\fly-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                },
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\fly-2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "events": [
@@ -256,6 +356,15 @@
         "includeConfig": 0
       },
       "target": "SpiderController"
+    },
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "FlyController"
     }
   ],
   "layers": [

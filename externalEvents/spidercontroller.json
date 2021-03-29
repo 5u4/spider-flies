@@ -32,7 +32,7 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarGlobal"
+                "value": "ModVarScene"
               },
               "parameters": [
                 "Vector2.X",
@@ -44,12 +44,23 @@
             {
               "type": {
                 "inverted": false,
-                "value": "ModVarGlobal"
+                "value": "ModVarScene"
               },
               "parameters": [
                 "Vector2.Y",
                 "=",
                 "MouseY()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "P2P::SendToAllVariable"
+              },
+              "parameters": [
+                "\"Spider\"",
+                "Vector2"
               ],
               "subInstructions": []
             }
@@ -117,6 +128,93 @@
         {
           "type": {
             "inverted": false,
+            "value": "VarGlobal"
+          },
+          "parameters": [
+            "IsSpider",
+            "=",
+            "0"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Vector2.X",
+                "=",
+                "Spider.PointX(\"Center\")"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "Vector2.Y",
+                "=",
+                "Spider.PointY(\"Center\")"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "P2P::OnEvent"
+              },
+              "parameters": [
+                "\"Spider\"",
+                "yes"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "P2P::GetEventVariable"
+              },
+              "parameters": [
+                "\"Spider\"",
+                "Vector2"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    },
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
             "value": "AnimationName"
           },
           "parameters": [
@@ -139,7 +237,7 @@
                 "value": "Egal"
               },
               "parameters": [
-                "DistanceBetweenPositions(Spider.PointX(\"Center\"),Spider.PointY(\"Center\"),GlobalVariable(Vector2.X),GlobalVariable(Vector2.Y))",
+                "DistanceBetweenPositions(Spider.PointX(\"Center\"),Spider.PointY(\"Center\"),Variable(Vector2.X),Variable(Vector2.Y))",
                 ">",
                 "10"
               ],
@@ -154,8 +252,8 @@
               },
               "parameters": [
                 "Spider",
-                "GlobalVariable(Vector2.X)",
-                "GlobalVariable(Vector2.Y)",
+                "Variable(Vector2.X)",
+                "Variable(Vector2.Y)",
                 "Spider.Variable(Speed)",
                 ""
               ],
@@ -168,8 +266,8 @@
               },
               "parameters": [
                 "Spider",
-                "GlobalVariable(Vector2.X)",
-                "GlobalVariable(Vector2.Y)",
+                "Variable(Vector2.X)",
+                "Variable(Vector2.Y)",
                 "800",
                 ""
               ],

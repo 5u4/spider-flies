@@ -148,6 +148,24 @@
         "name": "assets\\web.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/fly-1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\fly-1.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/fly-2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\fly-2.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -155,27 +173,6 @@
   "objects": [],
   "objectsGroups": [],
   "variables": [
-    {
-      "name": "Vector2",
-      "type": "structure",
-      "children": [
-        {
-          "name": "X",
-          "type": "string",
-          "value": ""
-        },
-        {
-          "name": "Y",
-          "type": "string",
-          "value": ""
-        }
-      ]
-    },
-    {
-      "name": "Number",
-      "type": "string",
-      "value": ""
-    },
     {
       "name": "IsSpider",
       "type": "string",
@@ -200,6 +197,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/createweb"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/flycontroller"
     }
   ],
   "eventsFunctionsExtensions": [],
