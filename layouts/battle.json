@@ -53,6 +53,11 @@
           "value": ""
         },
         {
+          "name": "ID",
+          "type": "string",
+          "value": ""
+        },
+        {
           "name": "X",
           "type": "string",
           "value": ""
@@ -63,6 +68,11 @@
           "value": ""
         }
       ]
+    },
+    {
+      "name": "Number",
+      "type": "string",
+      "value": ""
     }
   ],
   "instances": [
@@ -413,6 +423,11 @@
           "name": "SlowInc",
           "type": "string",
           "value": "1"
+        },
+        {
+          "name": "ID",
+          "type": "string",
+          "value": ""
         }
       ],
       "behaviors": [

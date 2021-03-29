@@ -26,6 +26,31 @@
         {
           "type": {
             "inverted": false,
+            "value": "ModVarObjet"
+          },
+          "parameters": [
+            "Web",
+            "ID",
+            "=",
+            "GlobalVariable(ID)"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "ID",
+            "+",
+            "1"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
             "value": "ChangeScale"
           },
           "parameters": [

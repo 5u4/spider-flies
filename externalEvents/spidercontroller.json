@@ -236,6 +236,18 @@
                 {
                   "type": {
                     "inverted": false,
+                    "value": "ModVarScene"
+                  },
+                  "parameters": [
+                    "Vector2WithAngle.ID",
+                    "=",
+                    "GlobalVariable(ID)"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
                     "value": "P2P::SendToAllVariable"
                   },
                   "parameters": [
@@ -530,6 +542,18 @@
                 "Spider",
                 "=",
                 "Variable(Vector2WithAngle.Angle)"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "ID",
+                "=",
+                "Variable(Vector2WithAngle.ID)"
               ],
               "subInstructions": []
             },
