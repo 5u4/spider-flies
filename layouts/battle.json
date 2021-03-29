@@ -417,9 +417,9 @@
       ],
       "behaviors": [
         {
-          "extraBorder": 32,
           "name": "DestroyOutside",
-          "type": "DestroyOutsideBehavior::DestroyOutside"
+          "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 32
         }
       ],
       "animations": [
