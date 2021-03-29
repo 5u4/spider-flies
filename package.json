@@ -5,10 +5,19 @@
     "node": "14.x"
   },
   "scripts": {
-    "start": "node server.js"
+    "serve": "node server.js",
+    "customizePeerId": "ts-node cmd/customizePeerId.ts",
+    "mvDefaultServer": "ts-node cmd/mvDefaultServer.ts",
+    "zip": "ts-node cmd/zip.ts",
+    "export": "yarn customizePeerId && yarn mvDefaultServer && yarn zip"
   },
   "dependencies": {
-    "peer": "^0.6.1"
+    "@types/archiver": "^5.1.0",
+    "@types/node": "^14.14.37",
+    "archiver": "^5.3.0",
+    "peer": "^0.6.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
   },
   "license": "MIT"
 }

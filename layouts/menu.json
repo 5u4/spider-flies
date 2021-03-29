@@ -242,11 +242,11 @@
             "value": "P2P::UseOwnBroker"
           },
           "parameters": [
-            "\"peer.wsenh.com\"",
-            "80",
+            "\"localhost\"",
+            "9000",
             "\"/\"",
-            "",
-            "no"
+            "\"\"",
+            ""
           ],
           "subInstructions": []
         },
