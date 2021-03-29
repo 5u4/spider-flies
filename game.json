@@ -175,6 +175,24 @@
         "name": "assets\\trail.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/spit.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\spit.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/web-trail.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\web-trail.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -223,6 +241,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/webcontroller"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/destroyweb"
     }
   ],
   "eventsFunctionsExtensions": [],

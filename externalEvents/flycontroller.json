@@ -62,7 +62,7 @@
                     "Fly",
                     "MouseX()",
                     "MouseY()",
-                    "clamp(Fly.Variable(Speed)-Fly.Variable(Slow),0,Fly.Variable(Speed))",
+                    "clamp(Fly.Variable(Speed)-Fly.Variable(Slow),Fly.Variable(MinSpeed),Fly.Variable(Speed))",
                     ""
                   ],
                   "subInstructions": []
@@ -134,7 +134,7 @@
                     "Fly",
                     "Slow",
                     "=",
-                    "max(0,Fly.Variable(Slow)-0.7)"
+                    "max(0,Fly.Variable(Slow)-Fly.Variable(SpeedRecovery))"
                   ],
                   "subInstructions": []
                 }

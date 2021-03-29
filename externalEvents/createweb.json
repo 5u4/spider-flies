@@ -16,7 +16,7 @@
           },
           "parameters": [
             "",
-            "Web",
+            "Spit",
             "",
             "",
             ""
@@ -29,7 +29,7 @@
             "value": "ModVarObjet"
           },
           "parameters": [
-            "Web",
+            "Spit",
             "ID",
             "=",
             "GlobalVariable(ID)"
@@ -51,10 +51,22 @@
         {
           "type": {
             "inverted": false,
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "Spit",
+            "=",
+            "0"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
             "value": "ChangeScale"
           },
           "parameters": [
-            "Web",
+            "Spit",
             "=",
             "0.5"
           ],
@@ -66,11 +78,11 @@
             "value": "MettreXY"
           },
           "parameters": [
-            "Web",
+            "Spit",
             "=",
-            "Spider.PointX(\"Muzzle\")-Web.Width()/2",
+            "Spider.PointX(\"Muzzle\") - Spit.Width() / 2",
             "=",
-            "Spider.PointY(\"Muzzle\")-Web.Height()/2"
+            "Spider.PointY(\"Muzzle\") - Spit.Height() / 2"
           ],
           "subInstructions": []
         },
@@ -80,7 +92,7 @@
             "value": "SetAngle"
           },
           "parameters": [
-            "Web",
+            "Spit",
             "=",
             "Spider.Angle()"
           ],
@@ -92,9 +104,60 @@
             "value": "AddForceAL"
           },
           "parameters": [
-            "Web",
+            "Spit",
             "Spider.Angle()",
-            "Web.Variable(Speed)",
+            "Spit.Variable(Speed)",
+            "1"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "SpitTrail",
+            "Spit.PointX(\"Center\")",
+            "Spit.PointY(\"Center\")",
+            ""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "LinkedObjects::LinkObjects"
+          },
+          "parameters": [
+            "",
+            "Spit",
+            "SpitTrail"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "SpitTrail",
+            "=",
+            "0"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "SpitTrail",
+            "Spider.Angle()",
+            "Spit.Variable(Speed)",
             "1"
           ],
           "subInstructions": []

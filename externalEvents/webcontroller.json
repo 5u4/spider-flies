@@ -7,7 +7,7 @@
       "disabled": false,
       "folded": false,
       "type": "BuiltinCommonInstructions::ForEach",
-      "object": "Web",
+      "object": "Spit",
       "conditions": [],
       "actions": [],
       "events": [
@@ -23,10 +23,10 @@
                 "value": "ModVarObjet"
               },
               "parameters": [
-                "Web",
+                "Spit",
                 "Slow",
                 "+",
-                "Web.Variable(SlowInc)"
+                "Spit.Variable(SlowInc)"
               ],
               "subInstructions": []
             }
@@ -44,7 +44,7 @@
                 "value": "CollisionNP"
               },
               "parameters": [
-                "Web",
+                "Spit",
                 "Fly",
                 "",
                 "",
@@ -75,7 +75,7 @@
                 "Fly",
                 "Slow",
                 "+",
-                "Web.Variable(Slow)"
+                "Spit.Variable(Slow)"
               ],
               "subInstructions": []
             },
@@ -87,7 +87,7 @@
               "parameters": [
                 "Number",
                 "=",
-                "Web.Variable(ID)"
+                "Spit.Variable(ID)"
               ],
               "subInstructions": []
             },
@@ -101,20 +101,19 @@
                 "Number"
               ],
               "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Delete"
-              },
-              "parameters": [
-                "Web",
-                ""
-              ],
-              "subInstructions": []
             }
           ],
-          "events": []
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "DestroyWeb"
+            }
+          ]
         }
       ]
     },
@@ -172,10 +171,98 @@
                 "value": "VarObjet"
               },
               "parameters": [
-                "Web",
+                "Spit",
                 "ID",
                 "=",
                 "Variable(Number)"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Link",
+              "include": {
+                "includeConfig": 0
+              },
+              "target": "DestroyWeb"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "SpitTrail",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "ObjectTimer"
+          },
+          "parameters": [
+            "SpitTrail",
+            "\"Delete\"",
+            "2"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "Delete"
+          },
+          "parameters": [
+            "SpitTrail",
+            ""
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "Web",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "Opacity"
+          },
+          "parameters": [
+            "Web",
+            "-",
+            "2"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Opacity"
+              },
+              "parameters": [
+                "Web",
+                "<=",
+                "0"
               ],
               "subInstructions": []
             }

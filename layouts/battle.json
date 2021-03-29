@@ -162,7 +162,7 @@
         {
           "name": "Speed",
           "type": "string",
-          "value": "100"
+          "value": "90"
         }
       ],
       "behaviors": [],
@@ -269,7 +269,7 @@
           "directions": [
             {
               "looping": false,
-              "timeBetweenFrames": 0.5,
+              "timeBetweenFrames": 0.4000000059604645,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
@@ -404,7 +404,7 @@
       ]
     },
     {
-      "name": "Web",
+      "name": "Spit",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -412,7 +412,7 @@
         {
           "name": "Speed",
           "type": "string",
-          "value": "800"
+          "value": "400"
         },
         {
           "name": "Slow",
@@ -422,7 +422,7 @@
         {
           "name": "SlowInc",
           "type": "string",
-          "value": "1"
+          "value": "0.7"
         },
         {
           "name": "ID",
@@ -434,7 +434,7 @@
         {
           "name": "DestroyOutside",
           "type": "DestroyOutsideBehavior::DestroyOutside",
-          "extraBorder": 32
+          "extraBorder": 350
         }
       ],
       "animations": [
@@ -447,8 +447,8 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": true,
-                  "image": "assets\\web.png",
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\spit.png",
                   "points": [],
                   "originPoint": {
                     "name": "origine",
@@ -461,26 +461,7 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": [
-                    [
-                      {
-                        "x": 13,
-                        "y": 13
-                      },
-                      {
-                        "x": 52,
-                        "y": 13
-                      },
-                      {
-                        "x": 52,
-                        "y": 52
-                      },
-                      {
-                        "x": 13,
-                        "y": 52
-                      }
-                    ]
-                  ]
+                  "customCollisionMask": []
                 }
               ]
             }
@@ -497,12 +478,22 @@
         {
           "name": "Speed",
           "type": "string",
-          "value": "120"
+          "value": "130"
         },
         {
           "name": "Slow",
           "type": "string",
           "value": ""
+        },
+        {
+          "name": "MinSpeed",
+          "type": "string",
+          "value": "30"
+        },
+        {
+          "name": "SpeedRecovery",
+          "type": "string",
+          "value": "0.8"
         }
       ],
       "behaviors": [],
@@ -607,7 +598,7 @@
       "emitterXDirection": 0,
       "emitterYDirection": 1,
       "emitterZDirection": 0,
-      "flow": 2,
+      "flow": 3,
       "friction": 2,
       "gravityEditionSimpleMode": true,
       "greenParam": "Random",
@@ -630,7 +621,7 @@
       "particleGreen1": 0,
       "particleGreen2": 0,
       "particleLifeTimeMax": 2.5,
-      "particleLifeTimeMin": 1.5,
+      "particleLifeTimeMin": 1,
       "particleRed1": 0,
       "particleRed2": 0,
       "particleSize1": 80,
@@ -655,6 +646,108 @@
         }
       ],
       "behaviors": []
+    },
+    {
+      "additive": false,
+      "alphaParam": "Mutable",
+      "angleParam": "Mutable",
+      "blueParam": "Random",
+      "destroyWhenNoParticles": true,
+      "emissionEditionSimpleMode": true,
+      "emitterAngleA": 0,
+      "emitterAngleB": 360,
+      "emitterForceMax": 32,
+      "emitterForceMin": 16,
+      "emitterXDirection": 0,
+      "emitterYDirection": 1,
+      "emitterZDirection": 0,
+      "flow": 45,
+      "friction": 2,
+      "gravityEditionSimpleMode": true,
+      "greenParam": "Random",
+      "maxParticleNb": 300,
+      "name": "SpitTrail",
+      "particleAlpha1": 204,
+      "particleAlpha2": 0,
+      "particleAlphaRandomness1": 0,
+      "particleAlphaRandomness2": 0,
+      "particleAngle1": 0,
+      "particleAngle2": 0,
+      "particleAngleRandomness1": 0,
+      "particleAngleRandomness2": 0,
+      "particleBlue1": 255,
+      "particleBlue2": 255,
+      "particleEditionSimpleMode": true,
+      "particleGravityX": 0,
+      "particleGravityY": 0,
+      "particleGravityZ": 0,
+      "particleGreen1": 255,
+      "particleGreen2": 255,
+      "particleLifeTimeMax": 1.5,
+      "particleLifeTimeMin": 0.5,
+      "particleRed1": 255,
+      "particleRed2": 255,
+      "particleSize1": 80,
+      "particleSize2": 0,
+      "particleSizeRandomness1": 0,
+      "particleSizeRandomness2": 0,
+      "redParam": "Enabled",
+      "rendererParam1": 4,
+      "rendererParam2": 8,
+      "rendererType": "Quad",
+      "sizeParam": "Mutable",
+      "tags": "",
+      "tank": -1,
+      "textureParticleName": "assets\\web-trail.png",
+      "type": "ParticleSystem::ParticleEmitter",
+      "zoneRadius": 6,
+      "variables": [],
+      "behaviors": [
+        {
+          "name": "DestroyOutside",
+          "type": "DestroyOutsideBehavior::DestroyOutside",
+          "extraBorder": 300
+        }
+      ]
+    },
+    {
+      "name": "Web",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\web.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "events": [
