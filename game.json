@@ -193,6 +193,24 @@
         "name": "assets\\web-trail.png",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/star.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\star.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/bliz.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\bliz.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -203,10 +221,15 @@
     {
       "name": "IsSpider",
       "type": "string",
-      "value": "1"
+      "value": "0"
     },
     {
       "name": "ID",
+      "type": "string",
+      "value": "1"
+    },
+    {
+      "name": "StarID",
       "type": "string",
       "value": "1"
     }
@@ -228,10 +251,6 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/externalEvents/createweb"
-    },
-    {
-      "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/flycontroller"
     },
     {
@@ -240,11 +259,23 @@
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/createweb"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/webcontroller"
     },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/destroyweb"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/createstar"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/starcontroller"
     }
   ],
   "eventsFunctionsExtensions": [],
