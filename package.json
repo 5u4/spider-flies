@@ -1,0 +1,11 @@
+{
+  "name": "spider-flies",
+  "version": "0.0.1",
+  "scripts": {
+    "serve": "node server.js"
+  },
+  "dependencies": {
+    "peer": "^0.6.1"
+  },
+  "license": "MIT"
+}
