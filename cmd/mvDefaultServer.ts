@@ -1,8 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
 
-const pathToMain = path.join(__dirname, "../bin", "web", "code0.js");
-
+const pathToMain = path.join(__dirname, "../bin", "web", "code1.js");
 const content = fs.readFileSync(pathToMain).toString();
 
 const res = content
