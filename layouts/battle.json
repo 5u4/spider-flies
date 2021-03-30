@@ -962,7 +962,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "assets\\star.png",
                   "points": [],
                   "originPoint": {
@@ -976,7 +976,26 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 16,
+                        "y": 16
+                      },
+                      {
+                        "x": 48,
+                        "y": 16
+                      },
+                      {
+                        "x": 48,
+                        "y": 48
+                      },
+                      {
+                        "x": 16,
+                        "y": 48
+                      }
+                    ]
+                  ]
                 }
               ]
             }
