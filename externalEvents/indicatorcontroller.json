@@ -1,0 +1,149 @@
+{
+  "associatedLayout": "Battle",
+  "lastChangeTimeStamp": 0,
+  "name": "IndicatorController",
+  "events": [
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "Indicator",
+            "",
+            "",
+            ""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "Indicator",
+            "=",
+            "-1"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Opacity"
+          },
+          "parameters": [
+            "Indicator",
+            "=",
+            "160"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ChangeScale"
+          },
+          "parameters": [
+            "Indicator",
+            "=",
+            "0.8"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "VarGlobal"
+          },
+          "parameters": [
+            "IsSpider",
+            "=",
+            "1"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "MettreXY"
+          },
+          "parameters": [
+            "Indicator",
+            "=",
+            "Spider.PointX(\"Center\")",
+            "=",
+            "Spider.PointY(\"Center\")"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "VarGlobal"
+          },
+          "parameters": [
+            "IsSpider",
+            "=",
+            "0"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "MettreXY"
+          },
+          "parameters": [
+            "Indicator",
+            "=",
+            "Fly.PointX(\"Center\")",
+            "=",
+            "Fly.PointY(\"Center\")"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    }
+  ]
+}

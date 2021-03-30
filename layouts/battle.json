@@ -1082,13 +1082,43 @@
       }
     },
     {
-      "name": "NewObject",
+      "name": "Indicator",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
       "variables": [],
       "behaviors": [],
-      "animations": []
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "assets\\indicator.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 32,
+                    "y": 32
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "events": [
@@ -1131,6 +1161,15 @@
     {
       "disabled": false,
       "folded": false,
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "IndicatorController"
+    },
+    {
+      "disabled": false,
+      "folded": true,
       "type": "BuiltinCommonInstructions::ForEach",
       "object": "Trail",
       "conditions": [],
@@ -1212,7 +1251,7 @@
     },
     {
       "disabled": false,
-      "folded": false,
+      "folded": true,
       "type": "BuiltinCommonInstructions::Standard",
       "conditions": [
         {

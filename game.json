@@ -472,6 +472,15 @@
         "name": "ios-icon-20.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/indicator.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\indicator.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -547,6 +556,10 @@
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/externalEvents/starcontroller"
+    },
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/externalEvents/indicatorcontroller"
     }
   ],
   "eventsFunctionsExtensions": [],
