@@ -387,6 +387,18 @@
                 "Number"
               ],
               "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarGlobal"
+              },
+              "parameters": [
+                "PlayerScore",
+                "+",
+                "1"
+              ],
+              "subInstructions": []
             }
           ],
           "events": [
@@ -563,6 +575,18 @@
                     "Star",
                     "Destroy",
                     "True"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "OpponentScore",
+                    "+",
+                    "1"
                   ],
                   "subInstructions": []
                 }

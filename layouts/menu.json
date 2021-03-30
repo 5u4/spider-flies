@@ -557,25 +557,31 @@
             ""
           ],
           "subInstructions": []
-        }
-      ],
-      "events": []
-    },
-    {
-      "disabled": false,
-      "folded": false,
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+        },
         {
           "type": {
             "inverted": false,
-            "value": "P2P::OnConnection"
+            "value": "ModVarGlobal"
           },
-          "parameters": [],
+          "parameters": [
+            "PlayerScore",
+            "=",
+            "0"
+          ],
           "subInstructions": []
-        }
-      ],
-      "actions": [
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "OpponentScore",
+            "=",
+            "0"
+          ],
+          "subInstructions": []
+        },
         {
           "type": {
             "inverted": false,
@@ -620,6 +626,30 @@
         }
       ],
       "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "PlayerScore",
+            "=",
+            "0"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ModVarGlobal"
+          },
+          "parameters": [
+            "OpponentScore",
+            "=",
+            "0"
+          ],
+          "subInstructions": []
+        },
         {
           "type": {
             "inverted": false,

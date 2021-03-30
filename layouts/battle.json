@@ -155,6 +155,60 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 44,
+      "layer": "UI",
+      "locked": false,
+      "name": "Score",
+      "persistentUuid": "0063358c-3aad-4df8-9327-0db639cc22a4",
+      "width": 72,
+      "x": 318,
+      "y": 16,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": [
+        {
+          "name": "Self",
+          "type": "boolean",
+          "value": true
+        }
+      ]
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 44,
+      "layer": "UI",
+      "locked": false,
+      "name": "ScoreSeparator",
+      "persistentUuid": "adb7d778-bf52-4795-bacd-fe80d026a7d4",
+      "width": 23,
+      "x": 396,
+      "y": 16,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 44,
+      "layer": "UI",
+      "locked": false,
+      "name": "Score",
+      "persistentUuid": "975e481d-17cb-4dcf-867f-09dc0bfd3ecc",
+      "width": 72,
+      "x": 459,
+      "y": 16,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -274,11 +328,137 @@
           "directions": [
             {
               "looping": false,
-              "timeBetweenFrames": 0.4000000059604645,
+              "timeBetweenFrames": 0.18000000715255737,
               "sprites": [
                 {
                   "hasCustomCollisionMask": true,
                   "image": "assets\\spider-3.png",
+                  "points": [
+                    {
+                      "name": "Muzzle",
+                      "x": 42,
+                      "y": 32
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 23,
+                        "y": 23
+                      },
+                      {
+                        "x": 42,
+                        "y": 23
+                      },
+                      {
+                        "x": 42,
+                        "y": 42
+                      },
+                      {
+                        "x": 23,
+                        "y": 42
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\spider-3.png",
+                  "points": [
+                    {
+                      "name": "Muzzle",
+                      "x": 42,
+                      "y": 32
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 23,
+                        "y": 23
+                      },
+                      {
+                        "x": 42,
+                        "y": 23
+                      },
+                      {
+                        "x": 42,
+                        "y": 42
+                      },
+                      {
+                        "x": 23,
+                        "y": 42
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\spider-4.png",
+                  "points": [
+                    {
+                      "name": "Muzzle",
+                      "x": 42,
+                      "y": 32
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 23,
+                        "y": 23
+                      },
+                      {
+                        "x": 42,
+                        "y": 23
+                      },
+                      {
+                        "x": 42,
+                        "y": 42
+                      },
+                      {
+                        "x": 23,
+                        "y": 42
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "assets\\spider-4.png",
                   "points": [
                     {
                       "name": "Muzzle",
@@ -860,6 +1040,46 @@
       "zoneRadius": 8,
       "variables": [],
       "behaviors": []
+    },
+    {
+      "name": "Score",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [
+        {
+          "name": "Self",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "behaviors": [],
+      "content": {
+        "text": "[shadow=red]0[/shadow] ",
+        "opacity": 255,
+        "fontSize": 32,
+        "visible": true,
+        "color": "#ffffff",
+        "fontFamily": "assets\\mini-wakuwaku.otf",
+        "align": "center",
+        "wordWrap": false
+      }
+    },
+    {
+      "name": "ScoreSeparator",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "behaviors": [],
+      "content": {
+        "text": "[shadow=red]:[/shadow] ",
+        "opacity": 255,
+        "fontSize": 32,
+        "visible": true,
+        "color": "#ffffff",
+        "fontFamily": "assets\\mini-wakuwaku.otf",
+        "align": "center",
+        "wordWrap": false
+      }
     }
   ],
   "events": [
@@ -980,6 +1200,205 @@
           "events": []
         }
       ]
+    },
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "MettreXY"
+          },
+          "parameters": [
+            "ScoreSeparator",
+            "=",
+            "SceneWindowWidth()/2-ScoreSeparator.Width()/2",
+            "=",
+            "16"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": [
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Score",
+                "Self",
+                "True"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "Score",
+                "=",
+                "ScoreSeparator.X()-Score.Width()-16",
+                "=",
+                "16"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "Score",
+                "Self",
+                "False"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "Score",
+                "=",
+                "ScoreSeparator.X()+ScoreSeparator.Width()+16",
+                "=",
+                "16"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    },
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "ObjectVariableAsBoolean"
+          },
+          "parameters": [
+            "Score",
+            "Self",
+            "True"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "BBText::SetBBText"
+          },
+          "parameters": [
+            "Score",
+            "=",
+            "\"[shadow=red]\"+ToString(GlobalVariable(PlayerScore))+\"[/shadow]\" "
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "MettreX"
+          },
+          "parameters": [
+            "Score",
+            "=",
+            "ScoreSeparator.X()-Score.Width()-32"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "disabled": false,
+      "folded": false,
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "ObjectVariableAsBoolean"
+          },
+          "parameters": [
+            "Score",
+            "Self",
+            "False"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "BBText::SetBBText"
+          },
+          "parameters": [
+            "Score",
+            "=",
+            "\"[shadow=red]\"+ToString(GlobalVariable(OpponentScore))+\"[/shadow]\" "
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "MettreX"
+          },
+          "parameters": [
+            "Score",
+            "=",
+            "ScoreSeparator.X()+ScoreSeparator.Width()+16"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
     }
   ],
   "layers": [
@@ -1003,6 +1422,17 @@
           "width": 0
         }
       ],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": 1702453580,
+      "ambientLightColorG": 0,
+      "ambientLightColorR": 7868768,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "name": "UI",
+      "visibility": true,
+      "cameras": [],
       "effects": []
     }
   ],
