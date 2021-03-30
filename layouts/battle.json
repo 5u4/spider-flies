@@ -1080,6 +1080,15 @@
         "align": "center",
         "wordWrap": false
       }
+    },
+    {
+      "name": "NewObject",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "behaviors": [],
+      "animations": []
     }
   ],
   "events": [
