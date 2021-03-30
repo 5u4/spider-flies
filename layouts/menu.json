@@ -34,22 +34,6 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "Join",
-      "persistentUuid": "f5d3fe79-5c48-4f8b-a55d-25c24e9aca93",
-      "width": 0,
-      "x": 337,
-      "y": 471,
-      "zOrder": 1,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "locked": false,
       "name": "IDText",
       "persistentUuid": "36d97fc0-534d-46f1-8887-db03004e7e35",
       "width": 0,
@@ -62,32 +46,16 @@
     },
     {
       "angle": 0,
-      "customSize": false,
-      "height": 0,
-      "layer": "",
-      "locked": false,
-      "name": "IDDisplay",
-      "persistentUuid": "20eabda5-911a-4d40-a0de-d8a6617f551e",
-      "width": 0,
-      "x": 206,
-      "y": 273,
-      "zOrder": 3,
-      "numberProperties": [],
-      "stringProperties": [],
-      "initialVariables": []
-    },
-    {
-      "angle": 0,
-      "customSize": false,
-      "height": 0,
+      "customSize": true,
+      "height": 65,
       "layer": "",
       "locked": false,
       "name": "ID",
-      "persistentUuid": "7f687174-e181-48cb-96f3-9ff39226bba9",
-      "width": 0,
-      "x": 120,
-      "y": 44,
-      "zOrder": 4,
+      "persistentUuid": "00839e0a-89b9-4807-ae37-106800f46896",
+      "width": 594,
+      "x": 113,
+      "y": 38,
+      "zOrder": 6,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -98,37 +66,50 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "Error",
-      "persistentUuid": "65e5bf1c-b8d3-4b66-8238-fca95489494c",
+      "name": "Join",
+      "persistentUuid": "4d46dbff-c385-4023-a7b0-52e7d0dbfd9d",
       "width": 0,
-      "x": 348,
-      "y": 405,
-      "zOrder": 5,
+      "x": 330,
+      "y": 464,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 86,
+      "layer": "",
+      "locked": false,
+      "name": "IDDisplay",
+      "persistentUuid": "bb99144d-8d94-412b-9b2f-be0f2c18d54f",
+      "width": 652,
+      "x": 91,
+      "y": 261,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 190,
+      "layer": "",
+      "locked": false,
+      "name": "Error",
+      "persistentUuid": "a7781447-be13-4eda-a57a-67f7601e7179",
+      "width": 760,
+      "x": 19,
+      "y": 392,
+      "zOrder": 9,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
     }
   ],
   "objects": [
-    {
-      "bold": false,
-      "italic": false,
-      "name": "Join",
-      "smoothed": true,
-      "tags": "",
-      "type": "TextObject::Text",
-      "underlined": false,
-      "variables": [],
-      "behaviors": [],
-      "string": "JOIN",
-      "font": "assets\\mini-wakuwaku.otf",
-      "characterSize": 48,
-      "color": {
-        "b": 255,
-        "g": 255,
-        "r": 255
-      }
-    },
     {
       "name": "IDText",
       "tags": "",
@@ -137,60 +118,71 @@
       "behaviors": []
     },
     {
-      "bold": false,
-      "italic": false,
-      "name": "IDDisplay",
-      "smoothed": true,
-      "tags": "",
-      "type": "TextObject::Text",
-      "underlined": false,
-      "variables": [],
-      "behaviors": [],
-      "string": "Type In ID",
-      "font": "assets\\mini-wakuwaku.otf",
-      "characterSize": 72,
-      "color": {
-        "b": 255,
-        "g": 255,
-        "r": 255
-      }
-    },
-    {
-      "bold": false,
-      "italic": false,
       "name": "ID",
-      "smoothed": true,
       "tags": "",
-      "type": "TextObject::Text",
-      "underlined": false,
+      "type": "BBText::BBText",
       "variables": [],
       "behaviors": [],
-      "string": "Connecting to server...",
-      "font": "assets\\mini-wakuwaku.otf",
-      "characterSize": 48,
-      "color": {
-        "b": 255,
-        "g": 255,
-        "r": 255
+      "content": {
+        "text": "[shadow=red]Connecting to server...[/shadow]",
+        "opacity": 255,
+        "fontSize": 48,
+        "visible": true,
+        "color": "#ffffff",
+        "fontFamily": "assets\\mini-wakuwaku.otf",
+        "align": "center",
+        "wordWrap": true
       }
     },
     {
-      "bold": false,
-      "italic": false,
-      "name": "Error",
-      "smoothed": true,
+      "name": "Join",
       "tags": "",
-      "type": "TextObject::Text",
-      "underlined": false,
+      "type": "BBText::BBText",
       "variables": [],
       "behaviors": [],
-      "string": "Error",
-      "font": "assets\\mini-wakuwaku.otf",
-      "characterSize": 32,
-      "color": {
-        "b": 172,
-        "g": 253,
-        "r": 39
+      "content": {
+        "text": "[shadow=red]JOIN[/shadow]",
+        "opacity": 255,
+        "fontSize": 48,
+        "visible": true,
+        "color": "#ffffff",
+        "fontFamily": "assets\\mini-wakuwaku.otf",
+        "align": "center",
+        "wordWrap": true
+      }
+    },
+    {
+      "name": "IDDisplay",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "behaviors": [],
+      "content": {
+        "text": "[shadow=red]Type In ID[/shadow]",
+        "opacity": 255,
+        "fontSize": 72,
+        "visible": true,
+        "color": "#ffffff",
+        "fontFamily": "assets\\mini-wakuwaku.otf",
+        "align": "center",
+        "wordWrap": true
+      }
+    },
+    {
+      "name": "Error",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "behaviors": [],
+      "content": {
+        "text": "[shadow=red]Error[/shadow]",
+        "opacity": 255,
+        "fontSize": 32,
+        "visible": true,
+        "color": "#ffffff",
+        "fontFamily": "assets\\mini-wakuwaku.otf",
+        "align": "center",
+        "wordWrap": true
       }
     }
   ],
@@ -253,7 +245,7 @@
         {
           "type": {
             "inverted": false,
-            "value": "TextObject::String"
+            "value": "BBText::SetBBText"
           },
           "parameters": [
             "Error",
@@ -265,23 +257,11 @@
         {
           "type": {
             "inverted": false,
-            "value": "TextObject::WrappingWidth"
+            "value": "BBText::SetAlignment"
           },
           "parameters": [
             "Error",
-            "=",
-            "ScreenWidth()-32"
-          ],
-          "subInstructions": []
-        },
-        {
-          "type": {
-            "inverted": false,
-            "value": "TextObject::SetWrapping"
-          },
-          "parameters": [
-            "Error",
-            "yes"
+            "\"center\""
           ],
           "subInstructions": []
         },
@@ -302,7 +282,7 @@
       "disabled": false,
       "folded": false,
       "type": "BuiltinCommonInstructions::JsCode",
-      "inlineCode": "const textEntries = runtimeScene.getObjects(\"IDText\");\nconst idDisplays = runtimeScene.getObjects(\"IDDisplay\");\nconst joinBtns = runtimeScene.getObjects(\"Join\");\nif (textEntries.length === 0 || idDisplays.length === 0 || joinBtns.length === 0) return;\n\n/** @type {gdjs.TextEntryRuntimeObject} */\nconst textEntry = textEntries[0];\ntextEntry._str = textEntry._str.substr(0, 4).replace(/[^\\d]/, '');\n\n/** @type {gdjs.TextRuntimeObject} */\nconst idDisplay = idDisplays[0];\nidDisplay.setString(textEntry._str.length === 0 ? \"Type in ID\" : textEntry._str);\n\n/** @type {gdjs.TextRuntimeObject} */\nconst joinBtn = joinBtns[0];\njoinBtn.hide(textEntry._str.length !== 4);\n",
+      "inlineCode": "const textEntries = runtimeScene.getObjects(\"IDText\");\nconst idDisplays = runtimeScene.getObjects(\"IDDisplay\");\nconst joinBtns = runtimeScene.getObjects(\"Join\");\nif (textEntries.length === 0 || idDisplays.length === 0 || joinBtns.length === 0) return;\n\n/** @type {gdjs.TextEntryRuntimeObject} */\nconst textEntry = textEntries[0];\ntextEntry._str = textEntry._str.substr(0, 4).replace(/[^\\d]/, '');\n\n/** @type {gdjs.BBTextRuntimeObject} */\nconst idDisplay = idDisplays[0];\nidDisplay.setBBText(`[shadow=red]${textEntry._str.length === 0 ? \"Type in ID\" : textEntry._str}[/shadow]`);\n\n/** @type {gdjs.BBTextRuntimeObject} */\nconst joinBtn = joinBtns[0];\njoinBtn.hide(textEntry._str.length !== 4);\n",
       "parameterObjects": "",
       "useStrict": true,
       "eventsSheetExpanded": false
@@ -346,12 +326,23 @@
         {
           "type": {
             "inverted": false,
-            "value": "TextObject::String"
+            "value": "BBText::SetBBText"
           },
           "parameters": [
             "ID",
             "=",
-            "\"Your ID: \"+P2P::GetID()"
+            "\"[shadow=red]Your ID: \"+P2P::GetID()+\"[/shadow]\""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Montre"
+          },
+          "parameters": [
+            "IDDisplay",
+            ""
           ],
           "subInstructions": []
         },
@@ -370,11 +361,11 @@
         {
           "type": {
             "inverted": false,
-            "value": "Montre"
+            "value": "BBText::SetAlignment"
           },
           "parameters": [
-            "IDDisplay",
-            ""
+            "ID",
+            "\"center\""
           ],
           "subInstructions": []
         }
@@ -426,19 +417,6 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "SourisSurObjet"
-                  },
-                  "parameters": [
-                    "Join",
-                    "",
-                    "no",
-                    ""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
                     "value": "MouseButtonReleased"
                   },
                   "parameters": [
@@ -466,12 +444,12 @@
         {
           "type": {
             "inverted": false,
-            "value": "TextObject::String"
+            "value": "BBText::SetBBText"
           },
           "parameters": [
             "Error",
             "=",
-            "\"Connecting to \"+IDText.String()+\"...\""
+            "\"[shadow=red]Connecting to \"+IDText.String()+\"...[/shadow]\""
           ],
           "subInstructions": []
         },
@@ -508,12 +486,12 @@
         {
           "type": {
             "inverted": false,
-            "value": "TextObject::String"
+            "value": "BBText::SetBBText"
           },
           "parameters": [
             "Error",
             "=",
-            "P2P::GetLastError()"
+            "\"[shadow=red]\"+P2P::GetLastError()+\"[/shadow]\""
           ],
           "subInstructions": []
         },
