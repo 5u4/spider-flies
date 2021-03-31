@@ -481,6 +481,15 @@
         "name": "assets\\indicator.png",
         "smoothed": true,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/light.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\light.png",
+        "smoothed": true,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -491,7 +500,7 @@
     {
       "name": "IsSpider",
       "type": "string",
-      "value": "0"
+      "value": "1"
     },
     {
       "name": "ID",

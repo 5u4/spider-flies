@@ -161,6 +161,92 @@
             "1"
           ],
           "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Create"
+          },
+          "parameters": [
+            "",
+            "Glow",
+            "Spit.PointX(\"Center\")",
+            "Spit.PointY(\"Center\")",
+            ""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "LinkedObjects::LinkObjects"
+          },
+          "parameters": [
+            "",
+            "Spit",
+            "Glow"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "Glow",
+            "=",
+            "-1"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "AddForceAL"
+          },
+          "parameters": [
+            "Glow",
+            "Spider.Angle()",
+            "Spit.Variable(Speed)",
+            "1"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ChangeBlendMode"
+          },
+          "parameters": [
+            "Glow",
+            "1"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Opacity"
+          },
+          "parameters": [
+            "Glow",
+            "=",
+            "20"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "SetAngle"
+          },
+          "parameters": [
+            "Glow",
+            "=",
+            "Spider.Angle()"
+          ],
+          "subInstructions": []
         }
       ],
       "events": []
