@@ -1,5 +1,11 @@
 <p align="center"><img src="./docs/demo-mini.gif" /></p>
 
+## Development
+
+```bash
+yarn serve # to start local peer server
+```
+
 ## Build
 
 1. Build from GDevelop to `bin/web` folder.

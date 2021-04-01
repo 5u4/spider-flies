@@ -1,11 +1,11 @@
-const { PeerServer } = require("peer");
+import { PeerServer } from "peer";
 
 const generateClientId = () =>
   Math.floor(Math.random() * 10000)
     .toString()
     .padStart(4, "0");
 const peerServer = PeerServer({
-  port: process.env.PORT | 9000,
+  port: 9000,
   path: "/",
   generateClientId,
 });

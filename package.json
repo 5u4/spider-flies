@@ -5,7 +5,7 @@
     "node": "14.x"
   },
   "scripts": {
-    "serve": "node server.js",
+    "serve": "ts-node server.ts",
     "customizePeerId": "ts-node cmd/customizePeerId.ts",
     "mvDefaultServer": "ts-node cmd/mvDefaultServer.ts",
     "zip": "ts-node cmd/zip.ts",
